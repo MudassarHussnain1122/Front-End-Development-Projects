@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page with Background Video and Music</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        .back {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .bar input {
+            border-radius: 10px;
+            border: solid white;
+            padding: 5px;
+            margin-right: 10px;
+        }
+
+        .bar button {
+            background-color: rgb(112, 100, 84);
+            border-radius: 10px;
+            border: solid black;
+            color: white;
+            padding: 8px;
+        }
+
+        .boxes {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 20px;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            width: 25%;
+            text-align: center;
+            color: black;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.8);
+            margin: 10px;
+        }
+
+        .box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .box img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .box h3 {
+            margin: 0;
+            padding: 10px;
+            background-color: black;
+            color: white;
+            font-size: 18px;
+        }
+
+        .box button {
+            width: 100%;
+            padding: 10px;
+            background: linear-gradient(to bottom, rgb(0, 0, 0), rgb(160, 134, 134));
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .box button:hover {
+            background-color: rgb(90, 80, 60);
+        }
+
+        .quantity-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+
+        .quantity-container input {
+            width: 50px;
+            margin-left: 20px;
+            padding: 5px;
+            font-size: 16px;
+            border: solid;
+            border-radius: 10px;
+            background-color: rgb(229, 175, 74);
+           color: solid black;
+           font-style: bold;
+            margin-right: 10px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+        #b{
+            border-radius: 10px;
+            background-color: rgb(6, 4, 4);
+  color: white;      
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Video -->
+    <video autoplay muted loop class="back">
+        <source src="C:/Users/AiA/Desktop/Amazon Project/17512964-uhd_2160_3840_25fps.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Background Music -->
+    <audio autoplay loop>
+        <source src="mymusic.mp3.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div>
+            <a href="#">Amazon.in</a>
+            <a href="#">Menu</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Prices</a>
+        </div>
+        <div class="bar">
+            <input type="search" placeholder="Search Anything">
+            <button>Search</button>
+        </div>
+    </nav>
+
+    <!-- Product Boxes -->
+    <div class="boxes">
+        <div class="box">
+            <img src="https://www.shutterstock.com/image-photo/cup-coffee-above-wooden-table-600nw-2472237979.jpg" alt="Coffee">
+            <h3>Coffee</h3>
+            <button>Buy Now</button>
+            <div class="quantity-container">
+                <input type="number" min="1" value="1" id="coffee-quantity">
+                <button id="b">Set Quantity</button>
+            </div>
+        </div>
+        <div class="box">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf4TwnKOJ5LwuytCwH7NhqdabVxXvpnyAIgQ&s" alt="Tea">
+            <h3>Tea</h3>
+            <button onclick="window.location.href='https://www.amazon.com';">Buy Now</button>
+            <div class="quantity-container">
+                <input type="number" min="1" value="1" id="tea-quantity">
+                <button id="b">Set Quantity</button>
+            </div>
+        </div>
+        <!-- New Product Boxes -->
+        <div class="box">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnyWvuweBb5GAPiNK8cX979l_qssbNgQG-ug&s" alt="Coffee Blend">
+            <h3>Coffee Blend</h3>
+            <button>Buy Now</button>
+            <div class="quantity-container">
+                <input type="number" min="1" value="1" id="coffee-blend-quantity">
+                <button id="b">Set Quantity</button>
+            </div>
+        </div>
+        <div class="box">
+            <img src="https://www.thecookierookie.com/wp-content/uploads/2023/05/bulletproof-coffee-featured.jpg" alt="Bulletproof Coffee">
+            <h3>Bulletproof Coffee</h3>
+            <button>Buy Now</button>
+            <div class="quantity-container">
+                <input type="number" min="1" value="1" id="bulletproof-coffee-quantity">
+                <button id="b">Set Quantity</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Amazon Project. All Rights Reserved.</p>
+        <p>
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms of Service</a> |
+            <a href="#">Help</a>
+        </p>
+    </footer>
+</body>
+</html>
