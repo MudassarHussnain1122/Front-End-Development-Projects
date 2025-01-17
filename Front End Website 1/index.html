@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devizone Technology</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            padding: 0;
+            margin: 0;
+            height: 100vh; /* Full height of the viewport */
+            overflow: hidden; /* Prevent scrolling on the body */
+            position: relative;
+        }
+
+        /* Video Background */
+        .back-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* width: 100%; */
+            /* height: 100%; */
+            /* object-fit: cover; */
+            z-index: -1;
+        }
+        @media (min-aspect-ratio:16/9){
+            .back-video{
+width: 100%;
+height: auto;
+        }
+
+    }
+    @media (max-aspect-ratio:16/9){
+            .back-video{
+width: auto;
+height: 100%;
+        }
+
+    }
+
+        /* Header Styling */
+        header {
+            text-align: center;
+            background-color: #0000004a; /* Set the background color to black */
+            padding: 10px 0; /* Add padding for better spacing */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            animation: fadein 2s forwards;
+        }
+
+        @keyframes flip {
+ from {
+   opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+header a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 5px;
+            font-size: 18px;
+            margin: 0 10px;
+            display: inline-block;
+            animation: flip 1s ease-in-out forwards;
+
+        }
+
+       
+            header a:hover {
+            background-color: #2d87f0;
+            border-radius: 5px;
+        }
+
+        /* Main Section */
+        section {
+            text-align: center;
+            position: absolute;
+            top: 20%; /* Adjust the position to give space from the top */
+            left: 50%;
+            transform: translateX(-50%);
+            color: white; /* White text color for contrast */
+            z-index: 1;
+            padding: 0 20px;
+        }
+
+        h1 {
+            margin-top: 5px;
+            margin-bottom: 0;
+            text-align: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bold;
+            font-size: 36px;
+            /* background-color: rgba(0, 0, 0, 0.4); Transparent black background */
+            color: white; /* White text for contrast */
+            padding: 10px;
+            animation: fadeIn 2s forwards;
+        }
+h1 :hover{
+
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+       
+
+        @keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Start 20px below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End at original position */
+  }
+}
+
+h5{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  margin-top: 10px;
+  /* background-color: rgba(0, 0, 0, 0.5); Transparent black background */
+  color: white; /* White text for contrast */
+  padding: 5px;
+  
+  animation: fadeInSlideUp 2s ease-out forwards; /* Apply the animation */
+}
+
+
+      
+
+        /* Image Styling */
+        img {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            display: block;
+            margin: 0 auto;
+            width: 200px;
+            border-radius:30px;
+            height: auto;
+            opacity: 0; /* Initially hidden */
+            animation: fadeIn 2s forwards;
+        }
+
+        /* Fade-in animation for image */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+
+        }
+        
+
+.button a{
+text-decoration: none;
+color: #fff;
+display: inline-block;
+text-align: center;
+border-radius: 15px;
+padding: 14px 60px;
+border: 2px solid white;
+margin-top: 15px;
+
+
+}
+
+      
+    </style>
+</head>
+<body>
+
+    <!-- Video Background -->
+    <video autoplay muted loop class="back-video">
+        <source src="C:\Users\AiA\Desktop\html/3129671-uhd_3840_2160_30fps.mp4" type="video/mp4">
+      
+    </video>
+
+    <!-- Header -->
+    <header>
+       
+        <a href="file:///C:/Users/AiA/Desktop/html/index.html">Home</a>
+        <a href="#">Menu</a>
+        <a href="file:///C:/Users/AiA/Desktop/html/login.html">Career</a>
+        <a href="file:///C:/Users/AiA/Desktop/html/About.html">About Us</a>
+        <a href="file:///C:/Users/AiA/Desktop/html/contact.html">Contact Us</a>
+    </header>
+    <!-- Main Section -->
+    <section>
+        <img src="C:/Users/AiA/Pictures/Leonardo_Phoenix_Concept_Modern_Technology_Logo_DesignName_Hev_3.jpg" alt="Devizone Technology">
+        <h1>Welcome to Devizone Technology</h1>
+        <h5>( A Software Company )</h5>
+      <div class="button">
+        <a href="/About.html">Explore Devizone Tech</a>
+      </div>
+       
+        
+       
+        </div>
+    </section>
+
+</body>
+</html>
