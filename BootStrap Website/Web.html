@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        .search-container {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-right: 50px;
+}
+
+/* Search Bar Input */
+.search-bar {
+    width: 200px;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.search-bar::placeholder {
+    color: #aaa;
+}
+
+/* Search Button */
+.search-btn {
+    background-color: #f39c12;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #e67e22;
+}
+
+.search-icon {
+    font-size: 18px;
+    color: white;
+}
+
+/* Focus and Hover Effects */
+.search-bar:focus {
+    width: 350px; /* Expands the input on focus */
+    border: 2px solid #f39c12;
+}
+
+.search-container:hover .search-bar {
+    width: 350px; /* Expands input when hovering */
+}
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}.gradient-footer {
+  margin: 0 0 0 0;
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  color: white; 
+  text-align: center;
+  padding: 2rem 1rem;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 20px 20px 0 0;
+
+  /* Ensure full width */
+  width: 100%;
+  position: relative;
+  left: 0;
+}
+
+.gradient-footer .footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.gradient-footer h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.gradient-footer p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.gradient-footer .social-icons {
+  margin: 1rem 0;
+}
+
+.gradient-footer .social-icons a {
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.gradient-footer .social-icons a:hover {
+  color: #ffdd57;
+  transform: scale(1.2);
+}
+
+
+
+
+      p{
+        animation-duration: 3s;
+  animation-name: slide-in;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  
+      }
+      @keyframes slide-in {
+  from {
+    translate: 150vw 0;
+    scale: 200% 1;
+  }
+
+  to {
+    translate: 0 0;
+    scale: 100% 1;
+  }}
+
+.containerboxx {
+  animation: slide 3s ease-in 1 2s;
+    display: flex;
+    max-width: 1100px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    margin: 20px auto; /* Add some margin for spacing */
+}
+
+.containerboxx:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-top-left-radius: 20px;
+      border-radius: 20px;
+      /* border-top-right-radius: 20px; */
+    }
+.image {
+    flex-shrink: 0;
+    width: 400px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.content {
+    padding: 30px;
+    flex: 1;
+    color: #333;
+}
+
+
+@keyframes slide {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+.content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.content button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.content button:hover {
+    background-color: #0056b3;
+}
+
+.containerboxx:hover .image {
+    opacity: 0.8;
+}
+
+.containerboxx:hover .content h2,
+.containerboxx:hover .content p {
+    color: #007bff;
+}
+
+
+.slider-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      perspective: 1000px;
+      animation: fadein 2s ease-in ;
+      
+    }
+    @keyframes fadein{
+      from{
+        opacity: 0;
+      }
+      to{
+        opacity:1;
+      }
+    }
+
+    .slider {
+      display: flex;
+      gap: 1rem;
+      transform-style: preserve-3d;
+      transition: transform 0.5s ease;
+    }
+
+    .card {
+      width: 200px;
+      height: 300px;
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      transform-style: preserve-3d;
+      transform: rotateY(0deg);
+      transition: transform 0.5s ease;
+    }
+
+
+
+
+    .card:hover {
+      transform: rotateY(15deg) scale(1.1);
+    }
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .card p {
+      font-size: 1rem;
+    }
+
+    .navigation {
+      position: absolute;
+      bottom: 20px;
+      display: flex;
+      gap: 1rem;
+      text-align: center;
+      align-items: center;
+justify-content: center;
+      /* padding-right: 20px; */
+      /* width: 3px; */
+    }
+   
+.new{
+
+
+
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+  height: 40px;
+  margin-bottom: 20px;
+  
+}
+    .nav-button {
+      width: 60px;
+      height: 60px;
+      background: #2575fc;
+      border: none;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      color: white;
+      justify-content: center;
+  align-items: center;
+  text-align: center;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+   
+
+    .nav-button:hover {
+      transform: scale(1.2);
+    }
+.btn-group{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.button{
+
+
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.carousel-item{
+
+height: 300px;
+
+width: 100%;
+}  </style>
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    
+    <!-- <nav class="navbar navbar-dark bg-dark"> -->
+      <!-- Navbar content -->
+
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">HexZone</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Menu</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Prices</a></li>
+                  <li><a class="dropdown-item" href="#">Careers</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Jobs</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Search...">
+                <button class="search-btn">
+                    <i class="search-icon">🔍</i>
+                </button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </nav>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+
+<!-- Slider -->
+<!-- <div class="container1"> -->
+  <!-- <div class="container"> -->
+    <!-- Content here -->
+  <!-- <div class="container" style="width: 100%; height: 500px;"> -->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+ 
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://cdn.mos.cms.futurecdn.net/3kcgKLkfPRbskpsYzW239d-1200-80.jpg" class="d-block w-100 h-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Coding Is Love</h5>
+        <p>SBest Developer</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHsnPrnr2ybgZ0qb3PJhAP0iLIv7pjZnjO2A&s" class="d-block w-100 h-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5> New Coding</h5>
+        <p>You Become a Coder.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXN0i9Oohtt52lLGzvONIGM067NOzwuM-k3A&s/1400x400" class="d-block w-100 h-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Become a Coder</h5>
+        <p>Front End Developer</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
+
+
+</div>
+
+
+
+<div class="alert alert-warning" role="alert">
+  This a Bootstrap Website!
+ </div>
+
+<div class="new">
+  <p>
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+      Importent Information
+    </button>
+  </p>
+  <div style="min-height: 120px;">
+    <div class="collapse collapse-horizontal" id="collapseWidthExample">
+      <div class="card card-body" style="width: 300px; color: white;">
+      Hi! How Are You .Welcome to My first Bootstrap Website
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<!-- content -->
+<div class="text-bg-primary p-3 w-100 h-100"><h2>Introduction</h2>
+  
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi veniam eos numquam, praesentium fuga accusantium, sint sequi illo obcaecati maiores porro sit consectetur Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem repellendus, laudantium cupiditate laboriosam natus sequi officiis expedita non reiciendis quidem reprehenderit voluptatibus modi autem tenetur incidunt. Praesentium, porro ducimus alias velit debitis quaerat et hic laudantium nihil veniam ipsa veritatis, est dolorem dolore consequatur delectus minus voluptas itaque explicabo sunt ut! Officia cum fuga aperiam sequi culpa enim odit, eum voluptate fugiat accusantium quis deleniti natus, earum repellendus. Eligendi eaque quaerat laborum repudiandae recusandae perferendis nostrum dolore eveniet? Veniam, nesciunt numquam ducimus modi harum, cumque enim porro architecto deserunt unde recusandae odio dolore id aspernatur eveniet eaque facere. Magnam, quo.</p>
+</div>
+<div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">Well done!</h4>
+  <p>Aww yeah, you successfully read this important alert message.Only 20 Items Left .You have 1 more chance to make a rich</p>
+  <hr>
+  <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+</div>
+
+<!-- 
+<div class="btn justify-content-center align-items-center text-align-center">
+  
+<button type="button" class="btn btn-primary position-relative justify-content-center align-items-center justify-content-center">
+  Inbox
+  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    100+
+    <span class="visually-hidden">unread messages</span>
+  </span>
+</button> -->
+
+<div class="container-md">
+
+<h2>About Us</h2><p>
+Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt natus commodi perspiciatis dolores sint consectetur, veniam molestiae neque sapiente corporis accusantium, illum odio dicta? Consectetur laborum impedit cupiditate rerum aliquid tempore sequi magni ratione, iusto nesciunt. Fuga, iste libero velit voluptate labore enim dicta necessitatibus? Neque sequi hic corporis, dolores at quasi commodi, quidem iure aut nobis obcaecati ipsum facere ratione ad sed! Et a repellendus mollitia cum vitae dignissimos ad, consequatur earum saepe sed, maxime voluptatum distinctio officiis ipsum. Sequi sed totam quam deserunt temporibus, numquam perspiciatis dolorum vero assumenda delectus maiores sunt enim similique nemo deleniti, dolores quo architecto nam. Natus, magnam ad deleniti officiis quidem sunt quam consequatur ipsum expedita neque, quos placeat fugiat dolore! Atque, nostrum nihil. Tempora, qui? Dicta veritatis unde dolorum quae. Magnam quasi possimus sequi, dignissimos id voluptates corrupti facere optio blanditiis molestiae numquam debitis modi libero quisquam doloribus dolore eius aut expedita quae! Aperiam inventore nihil itaque, consequuntur ratione optio voluptate quae laborum laudantium dolores voluptates tempore ea aut magni, impedit a. Fugiat quia ducimus eaque modi alias. Porro officia, error veniam libero ducimus voluptas, laborum molestiae asperiores non provident fuga neque. Quam ad reprehenderit quaerat quo tempore doloremque, maiores magnam sequi!
+<!-- Scrollable modal -->
+</p>
+
+</div>
+<br>
+<!-- Button trigger modal -->
+ <div class="button">
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" margin="100" >
+  Launch static backdrop modal
+</button>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" margin-top="200px">
+  <div class="modal-dialog">
+    <div class="modal-content" margin-top="200px">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<br>
+<div class="container-md">
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus sequi minus blanditiis in illo consectetur facere. Suscipit eaque voluptate assumenda minima maxime iste possimus? Tempore harum eaque libero nam laudantium aperiam repellat animi? Dignissimos nihil, delectus ullam iure fuga ducimus, quas illo adipisci autem aperiam dolorum, totam qui quos dicta natus a saepe. Recusandae voluptatum cum, cupiditate hic ducimus nemo inventore nihil maxime, consectetur, ea blanditiis asperiores eius sed nisi magni voluptatibus harum! Officia debitis labore qui blanditiis tenetur maiores dolor possimus, omnis consequuntur hic autem maxime voluptas iure cum ipsam neque numquam laudantium deleniti repellendus non. Debitis explicabo illo enim tenetur praesentium. Fugit quis voluptates optio! Magni eveniet amet autem, quas quod, animi velit modi officiis maxime sed quis ipsa? Ad at amet iure nesciunt numquam ratione sapiente vitae est. Error ea, eos earum consectetur, cumque aspernatur quia vitae asperiores adipisci, aut nostrum repellat tenetur libero atque quasi ipsa at exercitationem facere placeat facilis necessitatibus illum. Doloremque laborum voluptas recusandae et, soluta quaerat id commodi quis consequuntur quibusdam perspiciatis nam officiis repellendus asperiores, amet maiores sapiente illum ullam ratione totam tempore. Odio quidem fugiat veniam magnam fugit minus molestiae, debitis earum voluptas qui molestias quod id reiciendis voluptatem, dolorum quae odit illo, vel nisi magni eveniet modi quam perferendis. Sit repellat, necessitatibus, quia impedit quas saepe voluptatem quo, consectetur repudiandae laborum excepturi facilis esse reiciendis quam obcaecati maiores delectus. Voluptatum excepturi ducimus enim molestias. Deserunt recusandae voluptates expedita, aliquam, nemo molestias ratione ad placeat voluptatibus modi quaerat voluptatum nam, assumenda ullam praesentium omnis quas quibusdam atque asperiores explicabo corrupti? Fugiat, nisi sequi officiis labore molestiae maiores, quis facilis fuga qui sint ad tempora repellendus, sit inventore corporis. Placeat minus nostrum perspiciatis praesentium blanditiis voluptatibus molestias debitis ipsum necessitatibus quia aspernatur, nam quos pariatur velit at! Nemo vero modi voluptatum laborum iusto tenetur omnis hic mollitia aperiam veritatis! Earum amet eos iste dolore consequatur minus sit mollitia explicabo quae exercitationem totam deleniti nemo excepturi voluptatibus sint illum veritatis laborum distinctio iusto aliquam, animi dicta dignissimos assumenda. Dicta eius in suscipit quia nostrum beatae perferendis quos. Consequatur reprehenderit unde enim incidunt asperiores dolores iure possimus delectus sequi mollitia culpa, in nam doloremque quis quos, odit temporibus quod placeat rem repudiandae accusantium voluptates sit! Repellendus cum, fuga corrupti alias debitis, molestias facilis atque similique rerum dolores delectus quaerat fugit laborum tempora, quo eveniet autem nesciunt voluptatum? Illo non eveniet rerum placeat ipsum?</p>
+<div class="button">
+<div class="btn-group" role="group" aria-label="Basic mixed styles example" style="justify-content:center;align-items: center; text-align: center;">
+  <button type="button" class="btn btn-danger">Buy Product</button>
+  <button type="button" class="btn btn-warning">Price List</button>
+  <button type="button" class="btn btn-success">Contact Us</button>
+</div>
+
+
+</div>
+
+<div class="Information"
+
+>
+<div class="slider-container">
+  <div class="slider">
+    <div class="card">
+      <div class="card-content" id="c1">
+        <img src="https://static.vecteezy.com/system/resources/previews/001/416/705/non_2x/html5-emblem-orange-shield-and-white-text-vector.jpg" alt="">
+       
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <img src="https://t4.ftcdn.net/jpg/03/97/02/07/360_F_397020794_LXE0WLqWxcbhIf2UwXfRtLJwjw8aX5Wj.jpg" alt="">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJttkuRJ_Qky-Mc6mvMHox-Lf4JWCEYz_NqMxTJm4DVBHwnlgRq13MBQlCoGWsj98SEIE&usqp=CAU" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="navigation">
+    <button class="nav-button"  style="align-items: center; text-align: center;
+    justify-content: center;"  id="prev">&#8592;</button>
+    <button class="nav-button" id="next">&#8594;</button>
+  </div>
+</div>
+
+</div>
+
+<!-- Gird coloumn with text -->
+<div class="container-md">
+<div class="containerboxx">
+  <div class="image">
+      <img src="https://media.istockphoto.com/id/1387900612/photo/automation-data-analytic-with-robot-and-digital-visualization-for-big-data-scientist.jpg?s=612x612&w=0&k=20&c=50maOJU6CpVC55mYnUqtff2aiaJZ7KlmMn4jNhWD_eo=" alt="Placeholder Image">
+  </div>
+  <div class="content">
+      <h2>Welcome to My Website</h2>
+      <p>This is a Bootstrap website .I Also use HTML,CSS And Tailwin Css. Lorem ipsum dolor sit amet consectetur adipisicing elit. Et suscipit obcaecati neque vel minus officia repudiandae. Possimus quae sunt nobis fugit, temporibus maxime provident ducimus blanditiis, ratione sequi nemo iure!</p>
+      <button>Learn More</button>
+  </div>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+<footer class="gradient-footer">
+  <div class="footer-content">
+    <h2>Stay Connected</h2>
+    <p>Follow us on social media for the latest updates and offers.</p>
+    <div class="social-icons">
+      <a href="#" aria-label="Facebook">🌐</a>
+      <a href="#" aria-label="Twitter">🐦</a>
+      <a href="#" aria-label="Instagram">📸</a>
+      <a href="#" aria-label="LinkedIn">💼</a>
+    </div>
+    <p>&copy; 2025 Your Company. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+    <script>
+    const slider = document.querySelector('.slider');
+    const cards = document.querySelectorAll('.card');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+
+    let currentIndex = 0;
+
+    function updateSlider() {
+      const angle = currentIndex * -30;
+      slider.style.transform = `rotateY(${angle}deg)`;
+    }
+
+    prevButton.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+      updateSlider();
+    });
+
+    nextButton.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % cards.length;
+      updateSlider();
+    });
+  </script>
+  
+  </body>
+</html>
+
+
+  
